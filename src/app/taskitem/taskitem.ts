@@ -1,5 +1,9 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
+interface Task{
+  id: number;
+  title: string;
+}
 @Component({
   selector: 'app-taskitem',
   standalone: true,
@@ -7,7 +11,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./taskitem.css']
 })
 export class TaskitemComponent {
-  @Input() task: any;
+  @Input() task!: Task;
   @Output() delete = new EventEmitter<number>();
 
   deleteTask() {
