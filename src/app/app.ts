@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { TasklistComponent } from './tasklist/tasklist';  // import your main component
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  standalone: true,
+  imports: [TasklistComponent],  // import child component here
+  template: `<app-tasklist></app-tasklist>`,  // inline template to render Tasklist
+  styleUrls: ['./app.css']
 })
 export class App {
   protected title = 'day3';
